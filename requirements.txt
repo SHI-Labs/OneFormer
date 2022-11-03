@@ -1,0 +1,20 @@
+cython
+scipy==1.8.1
+shapely
+h5py==3.7.0
+submitit==1.4.2
+scikit-image
+timm==0.4.12
+einops==0.4.1
+icecream==2.1.2
+setuptools==59.5.0
+wandb==0.12.20
+ftfy==6.1.1
+regex==2022.6.2
+inflect==5.6.0
+diffdist==0.1
+pytorch_lightning==1.6.4
+tqdm==4.64.0
+mmcv==1.6.2
+-f https://shi-labs.com/natten/wheels/cu113/torch1.10.1/index.html
+natten==0.14.2

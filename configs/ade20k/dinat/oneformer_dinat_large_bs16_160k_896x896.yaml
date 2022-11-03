@@ -1,0 +1,42 @@
+_BASE_: ../oneformer_R50_bs16_160k.yaml
+MODEL:
+  BACKBONE:
+    NAME: "D2DiNAT"
+  DiNAT:
+    EMBED_DIM: 192
+    MLP_RATIO: 2.0
+    DEPTHS: [3, 4, 18, 5]
+    NUM_HEADS: [6, 12, 24, 48]
+    KERNEL_SIZE: 11
+    DROP_PATH_RATE: 0.3
+    DILATIONS: [[1, 20, 1], [1, 5, 1, 10], [1, 2, 1, 3, 1, 4, 1, 5, 1, 2, 1, 3, 1, 4, 1, 5, 1, 5], [1, 2, 1, 2, 1]]
+  WEIGHTS: "dinat_large_in22k_in1k_384_11x11.pkl"
+  PIXEL_MEAN: [123.675, 116.280, 103.530]
+  PIXEL_STD: [58.395, 57.120, 57.375]
+  ONE_FORMER:
+    NUM_OBJECT_QUERIES: 250
+SOLVER:
+  AMP:
+    ENABLED: False
+INPUT:
+  MIN_SIZE_TRAIN: !!python/object/apply:eval ["[int(x * 0.1 * 896) for x in range(5, 21)]"]
+  MIN_SIZE_TRAIN_SAMPLING: "choice"
+  MIN_SIZE_TEST: 896
+  MAX_SIZE_TRAIN: 3584
+  MAX_SIZE_TEST: 3584
+  CROP:
+    ENABLED: True
+    TYPE: "absolute"
+    SIZE: (896, 896)
+    SINGLE_CATEGORY_MAX_AREA: 1.0
+  COLOR_AUG_SSD: True
+  SIZE_DIVISIBILITY: 896  # used in dataset mapper
+  FORMAT: "RGB"
+TEST:
+  DETECTIONS_PER_IMAGE: 250
+  EVAL_PERIOD: 5000
+  AUG:
+    ENABLED: False
+    MIN_SIZES: [448, 678, 896, 1120, 1344, 1568]
+    MAX_SIZE: 6272
+    FLIP: True
