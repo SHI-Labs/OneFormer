@@ -16,10 +16,10 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 
 #### Features
 
-- OneFormer is a novel task-guided contrastive query-based end-to-end transformer-based universal image segmentation framework.
-- OneFormer, when trained only once, outperforms the existing individually trained models on all three image segmentation tasks.
-- We propose a task-conditioned joint training strategy, uniformly sampling the ground truth domain (panoptic, semantic, or instance) during training.
-- During inference, OneFormer outputs task-dynamic predictions.
+- OneFormer is the **first** multi-task universal image segmentation framework based on transformers.
+- OneFormer needs to be trained only once with a single universal architecture, a single model, and on a single dataset , to outperform existing frameworks across semantic, instance, and panoptic segmentation tasks.
+- OneFormer uses a task-conditioned joint training strategy, uniformly sampling different ground truth domains (semantic instance, or panoptic) by deriving all labels from panoptic annotations to train its multi-task model.
+- OneFormer uses a task token to condition the model on the task in focus, making our architecture task-guided for training, and task-dynamic for inference, all with a single model.
 
 ## Contents
 
@@ -75,7 +75,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 
 ## Results
 
-![Results](images/plots.svg)
+<!-- ![Results](images/plots.svg) -->
 
 - &dagger; denotes the backbones were pretrained on ImageNet-22k.
 - Pre-trained models can be downloaded following the instructions given [under tools](tools/README.md/#download-pretrained-weights).
