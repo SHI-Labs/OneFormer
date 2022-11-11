@@ -1,11 +1,9 @@
 # --------------------------------------------------------
 # Neighborhood Attention Transformer
-# Copyright (c) 2022 Picsart
-# Licensed under The MIT License [see LICENSE for details]
+# Licensed under The MIT License
 # Written by Ali Hassani
 # --------------------------------------------------------
 
-# Copyright (c) Picsart, Inc. and its affiliates.
 # Modified by Jitesh Jain
 
 import torch

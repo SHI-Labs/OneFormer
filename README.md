@@ -12,7 +12,6 @@
 
 This repo contains the code for our paper **OneFormer: One Transformer to Rule Universal Image Segmentation**.
 
-<!-- ![Teaser](images/teaser.svg) -->
 <img src="images/teaser.svg" width="100%"/>
 
 #### Features
@@ -21,6 +20,8 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 - OneFormer needs to be trained only once with a single universal architecture, a single model, and on a single dataset , to outperform existing frameworks across semantic, instance, and panoptic segmentation tasks.
 - OneFormer uses a task-conditioned joint training strategy, uniformly sampling different ground truth domains (semantic instance, or panoptic) by deriving all labels from panoptic annotations to train its multi-task model.
 - OneFormer uses a task token to condition the model on the task in focus, making our architecture task-guided for training, and task-dynamic for inference, all with a single model.
+
+![OneFormer](images/oneformer.svg)
 
 ## Contents
 
@@ -37,8 +38,6 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 ## News
 
 ### November 10, 2022
-
-![OneFormer](images/oneformer.svg)
 
 - [**Project Page**](https://praeclarumjj3.github.io/oneformer/), [**ArXiv Preprint**](https://praeclarumjj3.github.io/oneformer/) and [**GitHub Repo**](https://praeclarumjj3.github.io/oneformer/) are public!
 - OneFormer sets new SOTA on Cityscapes val with single-scale inference on Panoptic Segmentation with **68.5** PQ score and Instance Segmentation with **46.7** AP score!
@@ -76,7 +75,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 
 ## Results
 
-<!-- ![Results](images/plots.svg) -->
+![Results](images/plots.svg)
 
 - &dagger; denotes the backbones were pretrained on ImageNet-22k.
 - Pre-trained models can be downloaded following the instructions given [under tools](tools/README.md/#download-pretrained-weights).
