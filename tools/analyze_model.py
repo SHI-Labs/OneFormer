@@ -143,18 +143,23 @@ def do_speed(cfg):
         torch.cuda.synchronize()
     tstart = torch.cuda.Event(enable_timing=True)
     tend = torch.cuda.Event(enable_timing=True)
-    for _ in tqdm.trange(args.num_inputs):  # noqa    
-        tstart.record()
-        model(data)
-        tend.record()
-        torch.cuda.synchronize()
-        total_times.append(tstart.elapsed_time(tend))
+    fps = []
+    times = []
+    for _ in range(5):
+        for _ in tqdm.trange(args.num_inputs):  # noqa    
+            tstart.record()
+            model(data)
+            tend.record()
+            torch.cuda.synchronize()
+            total_times.append(tstart.elapsed_time(tend))
+        times.append(np.mean(total_times))
+        fps.append(1000/np.mean(total_times))
 
     logger.info(
-        "Average Time per {}x{} Image : {:.1f} milli-seconds".format(crop_size, crop_size, np.mean(total_times))
+        "Average Time per {}x{} Image : {:.1f} ± {:.1f} milli-seconds".format(crop_size, crop_size, np.mean(times), np.std(times))
     )
     logger.info(
-        "FPS : {:.2f}".format(1000/np.mean(total_times))
+        "FPS : {:.2f} ± {:.2f}".format(np.mean(fps), np.std(fps))
     )
 
 def do_parameter(cfg):

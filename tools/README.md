@@ -64,7 +64,7 @@ It's common to initialize from backbone models pre-trained on ImageNet classific
 ```bash
 python tools/analyze_model.py --num-inputs 100 --tasks [flop speed] \
     --config-file configs/ade20k/swin/oneformer_swin_large_IN21k_384_bs16_160k.yaml \
-    MODEL.WEIGHTS <path-to-checkpoint> [--use-fixed-input-size]
+    MODEL.WEIGHTS <path-to-checkpoint> [--use-fixed-input-size] MODEL.TEST.SEMANTIC_ON False MODEL.TEST.INSTANCE_ON False
 ```
 
 ## Training Throughput
