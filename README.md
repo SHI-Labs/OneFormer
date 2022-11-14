@@ -15,7 +15,7 @@
 
 This repo contains the code for our paper **OneFormer: One Transformer to Rule Universal Image Segmentation**.
 
-<img src="images/teaser.svg" width="100%"/>
+<img src="images/teaser.png" width="100%"/>
 
 #### Features
 
