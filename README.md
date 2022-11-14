@@ -44,7 +44,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 
 - [**Project Page**](https://praeclarumjj3.github.io/oneformer/), [**ArXiv Preprint**](https://praeclarumjj3.github.io/oneformer/) and [**GitHub Repo**](https://praeclarumjj3.github.io/oneformer/) are public!
 - OneFormer sets new SOTA on Cityscapes val with single-scale inference on Panoptic Segmentation with **68.5** PQ score and Instance Segmentation with **46.7** AP score!
-- OneFormer sets new SOTA on ADE20K val on Panoptic Segmentation with **50.2** PQ score Instance Segmentation with **37.6** AP!
+- OneFormer sets new SOTA on ADE20K val on Panoptic Segmentation with **50.2** PQ score and on Instance Segmentation with **37.6** AP!
 - OneFormer sets new SOTA on COCO val on Panoptic Segmentation with **58.0** PQ score!
 
 ## Installation Instructions
