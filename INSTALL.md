@@ -10,6 +10,7 @@ We use an evironment with the following specifications, packages and dependencie
 - [PyTorch v1.10.1](https://pytorch.org/get-started/previous-versions/)
 - [Torchvision v0.11.2](https://pytorch.org/get-started/previous-versions/)
 - [Detectron2 v0.6](https://github.com/facebookresearch/detectron2/releases/tag/v0.6)
+- [NATTEN v0.14.4](https://github.com/SHI-Labs/NATTEN/releases/tag/v0.14.4)
 
 ## Setup Instructions
 
