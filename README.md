@@ -8,7 +8,7 @@
 
 <sup>&dagger;</sup> Equal Contribution
 
-[[`Project Page`](https://praeclarumjj3.github.io/oneformer/)] [[`arXiv`](http://arxiv.org/abs/2208.03382)] [[`pdf`](http://arxiv.org/pdf/2208.03382.pdf)] [[`BibTeX`](#4citation)]
+[[`Project Page`](https://praeclarumjj3.github.io/oneformer/)] [[`arXiv`](https://arxiv.org/abs/2211.06220)] [[`pdf`](https://arxiv.org/pdf/2211.06220.pdf)] [[`BibTeX`](#4citation)]
 
 This repo contains the code for our paper **OneFormer: One Transformer to Rule Universal Image Segmentation**.
 
@@ -123,4 +123,4 @@ If you found OneFormer useful in your research, please consider starring ⭐ us 
 
 ## Acknowledgement
 
-We thank the authors [Mask2Former](https://github.com/facebookresearch/Mask2Former) and [GroupViT](https://github.com/NVlabs/GroupViT) for releasing their helpful codebases.
+We thank the authors of [Mask2Former](https://github.com/facebookresearch/Mask2Former), [GroupViT](https://github.com/NVlabs/GroupViT), and [Neighborhood-Attention-Transformer](https://github.com/SHI-Labs/Neighborhood-Attention-Transformer) for releasing their helpful codebases.
