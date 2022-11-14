@@ -123,4 +123,4 @@ If you found OneFormer useful in your research, please consider starring ⭐ us 
 
 ## Acknowledgement
 
-We thank the authors of [Mask2Former](https://github.com/facebookresearch/Mask2Former), [GroupViT](https://github.com/NVlabs/GroupViT), and [Neighborhood-Attention-Transformer](https://github.com/SHI-Labs/Neighborhood-Attention-Transformer) for releasing their helpful codebases.
+We thank the authors of [Mask2Former](https://github.com/facebookresearch/Mask2Former), [GroupViT](https://github.com/NVlabs/GroupViT), and [Neighborhood Attention Transformer](https://github.com/SHI-Labs/Neighborhood-Attention-Transformer) for releasing their helpful codebases.
