@@ -2,7 +2,7 @@
 
 [![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SHI-Labs/OneFormer/blob/main/colab/oneformer_colab.ipynb) [![License](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
-<!-- [![Huggingface space](https://img.shields.io/badge/🤗-Huggingface%20Space-cyan.svg)](https://huggingface.co/spaces/shi-lab/OneFormer) -->
+<!-- [![Huggingface space](https://img.shields.io/badge/🤗-Huggingface%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/OneFormer) -->
 
 [Jitesh Jain](https://praeclarumjj3.github.io/), [Jiachen Li](https://chrisjuniorli.github.io/)<sup>&dagger;</sup>, [MangTik Chiu](https://www.linkedin.com/in/mtchiu/)<sup>&dagger;</sup>, [Ali Hassani](https://alihassanijr.com/), [Nikita Orlov](https://www.linkedin.com/in/nukich74/), [Humphrey Shi](https://www.humphreyshi.com/home)
 
@@ -70,7 +70,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 ### Demo
 
 - We provide a quick to run demo on Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SHI-Labs/OneFormer/blob/main/colab/oneformer_colab.ipynb).
-<!-- and Hugging Face Spaces. [![Huggingface space](https://img.shields.io/badge/🤗-Huggingface%20Space-cyan.svg)](https://huggingface.co/spaces/shi-lab/OneFormer). -->
+<!-- and Hugging Face Spaces. [![Huggingface space](https://img.shields.io/badge/🤗-Huggingface%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/OneFormer). -->
 - Please see [OneFormer Demo](demo/README.md) for command line instructions on running the demo.
 
 ## Results
@@ -87,8 +87,8 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 | OneFormer | Swin-L<sup>&dagger;</sup> | 640&times;640 | 48.6 | 35.9 | 57.0 | 57.7 | 219M | [config](configs/ade20k/swin/oneformer_swin_large_bs16_160k.yaml) | [model](https://shi-labs.com/projects/oneformer/ade20k/250_16_swin_l_oneformer_ade20k_160k.pth) |
 | OneFormer | Swin-L<sup>&dagger;</sup> | 896&times;896 | 50.2 | 37.6 | 57.4 | 58.3 | 219M | [config](configs/ade20k/swin/oneformer_swin_large_bs16_160k_896x896.yaml) | [model](https://shi-labs.com/projects/oneformer/ade20k/896x896_250_16_swin_l_oneformer_ade20k_160k.pth) |
 | OneFormer | ConvNeXt-L<sup>&dagger;</sup> | 640&times;640 | 48.7 | 36.2 | 56.6 | 57.4 | 220M | [config](configs/ade20k/convnext/oneformer_convnext_large_bs16_160k.yaml) | [model](https://shi-labs.com/projects/oneformer/ade20k/250_16_convnext_l_oneformer_ade20k_160k.pth) |
-| OneFormer | DiNAT-L<sup>&dagger;</sup> | 640&times;640 | 49.1 | 36.0 | 57.8 | 58.4 | 223M | [config](configs/ade20k/dinat/oneformer_dinat_large_bs16_160k.yaml) | [model](https://shi-labs.com/projects/oneformer/ade20k/250_16_swin_l_oneformer_ade20k_160k.pth) |
-| OneFormer | DiNAT-L<sup>&dagger;</sup> | 896&times;896 | 50.0 | 36.8 | 58.1 | 58.6 | 223M | [config](configs/ade20k/dinat/oneformer_dinat_large_bs16_160k_896x896.yaml) | [model](https://shi-labs.com/projects/oneformer/ade20k/896x896_250_16_swin_l_oneformer_ade20k_160k.pth) |
+| OneFormer | DiNAT-L<sup>&dagger;</sup> | 640&times;640 | 49.1 | 36.0 | 57.8 | 58.4 | 223M | [config](configs/ade20k/dinat/oneformer_dinat_large_bs16_160k.yaml) | [model](https://shi-labs.com/projects/oneformer/ade20k/250_16_dinat_l_oneformer_ade20k_160k.pth) |
+| OneFormer | DiNAT-L<sup>&dagger;</sup> | 896&times;896 | 50.0 | 36.8 | 58.1 | 58.6 | 223M | [config](configs/ade20k/dinat/oneformer_dinat_large_bs16_160k_896x896.yaml) | [model](https://shi-labs.com/projects/oneformer/ade20k/896x896_250_16_dinat_l_oneformer_ade20k_160k.pth) |
 | OneFormer | ConvNeXt-XL<sup>&dagger;</sup> | 640&times;640 | 48.9 | 36.3 | 57.4 | 58.8 | 372M | [config](configs/ade20k/convnext/oneformer_convnext_xlarge_bs16_160k.yaml) | [model](https://shi-labs.com/projects/oneformer/ade20k/250_16_convnext_xl_oneformer_ade20k_160k.pth) |
 
 ### Cityscapes
@@ -105,7 +105,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 | Method | Backbone |  PQ   |  PQ<sup>Th</sup>   |  PQ<sup>St</sup>   | AP | mIoU | #params | config | Checkpoint |
 |   :---:| :---:    | :---: | :---:              | :---:              |:---:| :---:| :---:  |  :---: |    :---:   |
 | OneFormer | Swin-L<sup>&dagger;</sup> | 57.9 | 64.4 | 48.0 | 49.0 | 67.4 | 219M | [config](configs/coco/swin/oneformer_swin_large_bs16_100ep.yaml) | [model](https://shi-labs.com/projects/oneformer/coco/150_16_swin_l_oneformer_coco_100ep.pth) |
-| OneFormer | DiNAT-L<sup>&dagger;</sup> | 58.0 | 64.3 | 48.4 | 49.2 | 68.1 | 223M | [config](configs/coco/dinat/oneformer_dinat_large_bs16_100ep.yaml) | [model](https://shi-labs.com/projects/oneformer/coco/150_16_dinat_l_oneformer_coco_100ep.pth) |
+| OneFormer | DiNAT-L<sup>&dagger;</sup> | 58.0 | 64.3 | 48.4 | 49.2 | 68.1 | 223M | [config](configs/coco/dinat/oneformer_dinat_large_bs16_100ep.yaml) | [model](https://shi-labs.com/projects/oneformer/coco/150_16_dinal_l_oneformer_coco_100ep.pth) |
 
 
 ## Citation
