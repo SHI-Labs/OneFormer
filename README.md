@@ -1,9 +1,9 @@
 # OneFormer: One Transformer to Rule Universal Image Segmentation
 
+[![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SHI-Labs/OneFormer/blob/main/colab/oneformer_colab.ipynb) [![License](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
+
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/panoptic-segmentation-on-ade20k-val)](https://paperswithcode.com/sota/panoptic-segmentation-on-ade20k-val?p=oneformer-one-transformer-to-rule-universal) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/instance-segmentation-on-ade20k-val)](https://paperswithcode.com/sota/instance-segmentation-on-ade20k-val?p=oneformer-one-transformer-to-rule-universal) 	
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/instance-segmentation-on-cityscapes-val)](https://paperswithcode.com/sota/instance-segmentation-on-cityscapes-val?p=oneformer-one-transformer-to-rule-universal) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/semantic-segmentation-on-coco-1)](https://paperswithcode.com/sota/semantic-segmentation-on-coco-1?p=oneformer-one-transformer-to-rule-universal) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/instance-segmentation-on-coco-val-panoptic)](https://paperswithcode.com/sota/instance-segmentation-on-coco-val-panoptic?p=oneformer-one-transformer-to-rule-universal) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/panoptic-segmentation-on-cityscapes-val)](https://paperswithcode.com/sota/panoptic-segmentation-on-cityscapes-val?p=oneformer-one-transformer-to-rule-universal) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/semantic-segmentation-on-ade20k-val)](https://paperswithcode.com/sota/semantic-segmentation-on-ade20k-val?p=oneformer-one-transformer-to-rule-universal) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/panoptic-segmentation-on-coco-minival)](https://paperswithcode.com/sota/panoptic-segmentation-on-coco-minival?p=oneformer-one-transformer-to-rule-universal) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/semantic-segmentation-on-cityscapes-val)](https://paperswithcode.com/sota/semantic-segmentation-on-cityscapes-val?p=oneformer-one-transformer-to-rule-universal)
-
-[![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SHI-Labs/OneFormer/blob/main/colab/oneformer_colab.ipynb) [![License](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
 <!-- [![Huggingface space](https://img.shields.io/badge/🤗-Huggingface%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/OneFormer) -->
 
@@ -49,7 +49,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 
 ## Installation Instructions
 
-- We use PyTorch 3.8.13, PyTorch-1.10.1 and CUDA 11.3.
+- We use Python 3.8, PyTorch 1.10.1 (CUDA 11.3 build).
 - We use Detectron2-v0.6.
 - For complete installation instructions, please see [INSTALL.md](INSTALL.md).
 
@@ -108,7 +108,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 | Method | Backbone |  PQ   |  PQ<sup>Th</sup>   |  PQ<sup>St</sup>   | AP | mIoU | #params | config | Checkpoint |
 |   :---:| :---:    | :---: | :---:              | :---:              |:---:| :---:| :---:  |  :---: |    :---:   |
 | OneFormer | Swin-L<sup>&dagger;</sup> | 57.9 | 64.4 | 48.0 | 49.0 | 67.4 | 219M | [config](configs/coco/swin/oneformer_swin_large_bs16_100ep.yaml) | [model](https://shi-labs.com/projects/oneformer/coco/150_16_swin_l_oneformer_coco_100ep.pth) |
-| OneFormer | DiNAT-L<sup>&dagger;</sup> | 58.0 | 64.3 | 48.4 | 49.2 | 68.1 | 223M | [config](configs/coco/dinat/oneformer_dinat_large_bs16_100ep.yaml) | [model](https://shi-labs.com/projects/oneformer/coco/150_16_dinal_l_oneformer_coco_100ep.pth) |
+| OneFormer | DiNAT-L<sup>&dagger;</sup> | 58.0 | 64.3 | 48.4 | 49.2 | 68.1 | 223M | [config](configs/coco/dinat/oneformer_dinat_large_bs16_100ep.yaml) | [model](https://shi-labs.com/projects/oneformer/coco/150_16_dinat_l_oneformer_coco_100ep.pth) |
 
 
 ## Citation
