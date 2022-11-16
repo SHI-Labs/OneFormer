@@ -6,9 +6,8 @@
 # Modified from https://github.com/chengdazhi/Deformable-Convolution-V2-PyTorch/tree/pytorch_1.0.0
 # ------------------------------------------------------------------------------------------------
 
-# ------------------------------------------------------------------------------
-# Reference: https://github.com/facebookresearch/Mask2Former/blob/main/mask2former/modeling/pixel_decoder/ops/functions/ms_deform_attn_func.py
-# ------------------------------------------------------------------------------
+# Copyright (c) Facebook, Inc. and its affiliates.
+# Modified by Bowen Cheng from https://github.com/fundamentalvision/Deformable-DETR
 
 from __future__ import absolute_import
 from __future__ import print_function
@@ -19,15 +18,18 @@ import torch.nn.functional as F
 from torch.autograd import Function
 from torch.autograd.function import once_differentiable
 
-try:
-    import MultiScaleDeformableAttention as MSDA
-except ModuleNotFoundError as e:
-    info_string = (
-        "\n\nPlease compile MultiScaleDeformableAttention CUDA op with the following commands:\n"
-        "\t`cd oneformer/modeling/pixel_decoder/ops`\n"
-        "\t`sh make.sh`\n"
-    )
-    raise ModuleNotFoundError(info_string)
+if torch.cuda.is_available():
+    try:
+        import MultiScaleDeformableAttention as MSDA
+    except ModuleNotFoundError as e:
+        info_string = (
+            "\n\nPlease compile MultiScaleDeformableAttention CUDA op with the following commands:\n"
+            "\t`cd mask2former/modeling/pixel_decoder/ops`\n"
+            "\t`sh make.sh`\n"
+        )
+        raise ModuleNotFoundError(info_string)
+else:
+    MultiScaleDeformableAttention = None
 
 
 class MSDeformAttnFunction(Function):

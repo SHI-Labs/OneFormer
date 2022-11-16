@@ -58,7 +58,6 @@ def get_parser():
         metavar="FILE",
         help="path to config file",
     )
-    parser.add_argument("--webcam", action="store_true", help="Take inputs from webcam.")
     parser.add_argument("--task", help="Task type")
     parser.add_argument(
         "--input",
@@ -134,21 +133,6 @@ if __name__ == "__main__":
                         out_filename = os.path.join(opath, os.path.basename(path))
                         visualized_output[k].save(out_filename)    
             else:
-                cv2.namedWindow(WINDOW_NAME, cv2.WINDOW_NORMAL)
-                cv2.imshow(WINDOW_NAME, visualized_output.get_image()[:, :, ::-1])
-                if cv2.waitKey(0) == 27:
-                    break  # esc to quit
-
-    elif args.webcam:
-        assert args.input is None, "Cannot have both --input and --webcam!"
-        assert args.output is None, "output not yet supported with --webcam!"
-        cam = cv2.VideoCapture(0)
-        for vis in tqdm.tqdm(demo.run_on_video(cam)):
-            cv2.namedWindow(WINDOW_NAME, cv2.WINDOW_NORMAL)
-            cv2.imshow(WINDOW_NAME, vis)
-            if cv2.waitKey(1) == 27:
-                break  # esc to quit
-        cam.release()
-        cv2.destroyAllWindows()
+                raise ValueError("Please specify an output path!")
     else:
         raise ValueError("No Input Given")

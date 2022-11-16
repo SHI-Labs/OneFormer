@@ -6,9 +6,8 @@
 # Modified from https://github.com/chengdazhi/Deformable-Convolution-V2-PyTorch/tree/pytorch_1.0.0
 # ------------------------------------------------------------------------------------------------
 
-# ------------------------------------------------------------------------------
-# Reference: https://github.com/facebookresearch/Mask2Former/blob/main/mask2former/modeling/pixel_decoder/ops/modules/ms_deform_attn.py
-# ------------------------------------------------------------------------------
+# Copyright (c) Facebook, Inc. and its affiliates.
+# Modified by Bowen Cheng from https://github.com/fundamentalvision/Deformable-DETR
 
 from __future__ import absolute_import
 from __future__ import print_function
@@ -22,7 +21,10 @@ from torch import nn
 import torch.nn.functional as F
 from torch.nn.init import xavier_uniform_, constant_
 
-from ..functions import MSDeformAttnFunction
+if torch.cuda.is_available():
+    from ..functions import MSDeformAttnFunction
+else:
+    MSDeformAttnFunction = None
 from ..functions.ms_deform_attn_func import ms_deform_attn_core_pytorch
 
 
@@ -114,9 +116,11 @@ class MSDeformAttn(nn.Module):
         else:
             raise ValueError(
                 'Last dim of reference_points must be 2 or 4, but get {} instead.'.format(reference_points.shape[-1]))
-        output = MSDeformAttnFunction.apply(
-            value, input_spatial_shapes, input_level_start_index, sampling_locations, attention_weights, self.im2col_step)
-        # # For FLOPs calculation only
-        # output = ms_deform_attn_core_pytorch(value, input_spatial_shapes, sampling_locations, attention_weights)
+        if torch.cuda.is_available():
+            output = MSDeformAttnFunction.apply(
+                value, input_spatial_shapes, input_level_start_index, sampling_locations, attention_weights, self.im2col_step)
+        else:
+            ## CPU
+            output = ms_deform_attn_core_pytorch(value, input_spatial_shapes, sampling_locations, attention_weights)
         output = self.output_proj(output)
         return output
