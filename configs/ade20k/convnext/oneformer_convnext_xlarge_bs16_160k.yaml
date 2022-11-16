@@ -1,4 +1,4 @@
-_BASE_: ../oneformerrrr_R50_bs16_160k.yaml
+_BASE_: ../oneformer_R50_bs16_160k.yaml
 MODEL:
   BACKBONE:
     NAME: "D2ConvNeXt"
