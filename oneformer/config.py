@@ -171,9 +171,6 @@ def add_swin_config(cfg):
     cfg.MODEL.SWIN.PATCH_NORM = True
     cfg.MODEL.SWIN.OUT_FEATURES = ["res2", "res3", "res4", "res5"]
     cfg.MODEL.SWIN.USE_CHECKPOINT = False
-    ## Semask additions
-    cfg.MODEL.SWIN.SEM_WINDOW_SIZE = 7
-    cfg.MODEL.SWIN.NUM_SEM_BLOCKS = 1
 
 def add_dinat_config(cfg):
     """
