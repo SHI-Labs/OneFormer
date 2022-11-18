@@ -1,11 +1,9 @@
 # OneFormer: One Transformer to Rule Universal Image Segmentation
 
-[![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SHI-Labs/OneFormer/blob/main/colab/oneformer_colab.ipynb) [![License](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
+[![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/) [![Huggingface space](https://img.shields.io/badge/🤗-Huggingface%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/OneFormer) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SHI-Labs/OneFormer/blob/main/colab/oneformer_colab.ipynb) [![License](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/panoptic-segmentation-on-ade20k-val)](https://paperswithcode.com/sota/panoptic-segmentation-on-ade20k-val?p=oneformer-one-transformer-to-rule-universal) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/instance-segmentation-on-ade20k-val)](https://paperswithcode.com/sota/instance-segmentation-on-ade20k-val?p=oneformer-one-transformer-to-rule-universal) 	
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/instance-segmentation-on-cityscapes-val)](https://paperswithcode.com/sota/instance-segmentation-on-cityscapes-val?p=oneformer-one-transformer-to-rule-universal) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/semantic-segmentation-on-coco-1)](https://paperswithcode.com/sota/semantic-segmentation-on-coco-1?p=oneformer-one-transformer-to-rule-universal) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/instance-segmentation-on-coco-val-panoptic)](https://paperswithcode.com/sota/instance-segmentation-on-coco-val-panoptic?p=oneformer-one-transformer-to-rule-universal) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/panoptic-segmentation-on-cityscapes-val)](https://paperswithcode.com/sota/panoptic-segmentation-on-cityscapes-val?p=oneformer-one-transformer-to-rule-universal) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/semantic-segmentation-on-ade20k-val)](https://paperswithcode.com/sota/semantic-segmentation-on-ade20k-val?p=oneformer-one-transformer-to-rule-universal) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/panoptic-segmentation-on-coco-minival)](https://paperswithcode.com/sota/panoptic-segmentation-on-coco-minival?p=oneformer-one-transformer-to-rule-universal) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/oneformer-one-transformer-to-rule-universal/semantic-segmentation-on-cityscapes-val)](https://paperswithcode.com/sota/semantic-segmentation-on-cityscapes-val?p=oneformer-one-transformer-to-rule-universal)
-
-<!-- [![Huggingface space](https://img.shields.io/badge/🤗-Huggingface%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/OneFormer) -->
 
 [Jitesh Jain](https://praeclarumjj3.github.io/), [Jiachen Li](https://chrisjuniorli.github.io/)<sup>&dagger;</sup>, [MangTik Chiu](https://www.linkedin.com/in/mtchiu/)<sup>&dagger;</sup>, [Ali Hassani](https://alihassanijr.com/), [Nikita Orlov](https://www.linkedin.com/in/nukich74/), [Humphrey Shi](https://www.humphreyshi.com/home)
 
@@ -40,6 +38,10 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 
 ## News
 
+### November 18, 2022
+
+- Our demo is available on 🤗 Huggingface Space! Try it out at [![Huggingface space](https://img.shields.io/badge/🤗-Huggingface%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/OneFormer).
+
 ### November 10, 2022
 
 - [**Project Page**](https://praeclarumjj3.github.io/oneformer/), [**ArXiv Preprint**](https://praeclarumjj3.github.io/oneformer/) and [**GitHub Repo**](https://praeclarumjj3.github.io/oneformer/) are public!
@@ -72,8 +74,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 
 ### Demo
 
-- We provide a quick to run demo on Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SHI-Labs/OneFormer/blob/main/colab/oneformer_colab.ipynb).
-<!-- and Hugging Face Spaces. [![Huggingface space](https://img.shields.io/badge/🤗-Huggingface%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/OneFormer). -->
+- We provide quick to run demos on Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SHI-Labs/OneFormer/blob/main/colab/oneformer_colab.ipynb) and Hugging Face Spaces [![Huggingface space](https://img.shields.io/badge/🤗-Huggingface%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/OneFormer).
 - Please see [OneFormer Demo](demo/README.md) for command line instructions on running the demo.
 
 ## Results

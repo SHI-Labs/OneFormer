@@ -22,7 +22,7 @@ from detectron2.structures import BitMasks, Boxes, BoxMode, Keypoints, PolygonMa
 from detectron2.utils.file_io import PathManager
 import random
 random.seed(0)
-from .colormap import random_color, _COLORS
+from colormap import random_color, _COLORS
 logger = logging.getLogger(__name__)
 
 __all__ = ["ColorMode", "VisImage", "Visualizer"]
