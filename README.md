@@ -75,7 +75,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 ### Demo
 
 - We provide quick to run demos on Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SHI-Labs/OneFormer/blob/main/colab/oneformer_colab.ipynb) and Hugging Face Spaces [![Huggingface space](https://img.shields.io/badge/🤗-Huggingface%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/OneFormer).
-- Take a look at YouTube [video](https://youtu.be/_Zr1pOi7Chw) covering our model.
+- Take a look at Roboflow YouTube [video](https://youtu.be/_Zr1pOi7Chw) covering our model.
 - Please see [OneFormer Demo](demo/README.md) for command line instructions on running the demo.
 
 ## Results
