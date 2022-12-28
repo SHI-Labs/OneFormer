@@ -16,8 +16,8 @@ It's common to initialize from backbone models pre-trained on ImageNet classific
     wget https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_large_patch4_window12_384_22k.pth
     python tools/convert-pretrained-model-to-d2.py swin_large_patch4_window12_384_22k.pth swin_large_patch4_window12_384_22k.pkl
 
-    wget https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_large_patch4_window12_384_22k_to_1k.pth
-    python tools/convert-pretrained-model-to-d2.py swin_large_patch4_window12_384_22k_to_1k.pth swin_large_patch4_window12_384_22k_to_1k.pkl
+    wget https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_large_patch4_window12_384_22kto1k.pth
+    python tools/convert-pretrained-model-to-d2.py swin_large_patch4_window12_384_22kto1k.pth swin_large_patch4_window12_384_22kto1k.pkl
     ```
 
 </details>

@@ -17,24 +17,24 @@ MODEL:
   ONE_FORMER:
     NUM_OBJECT_QUERIES: 250
 INPUT:
-  MIN_SIZE_TRAIN: !!python/object/apply:eval ["[int(x * 0.1 * 896) for x in range(5, 21)]"]
+  MIN_SIZE_TRAIN: !!python/object/apply:eval ["[int(x * 0.1 * 1280) for x in range(5, 21)]"]
   MIN_SIZE_TRAIN_SAMPLING: "choice"
-  MIN_SIZE_TEST: 896
-  MAX_SIZE_TRAIN: 3584
-  MAX_SIZE_TEST: 3584
+  MIN_SIZE_TEST: 1280
+  MAX_SIZE_TRAIN: 5120
+  MAX_SIZE_TEST: 5120
   CROP:
     ENABLED: True
     TYPE: "absolute"
-    SIZE: (896, 896)
+    SIZE: (1280, 1280)
     SINGLE_CATEGORY_MAX_AREA: 1.0
   COLOR_AUG_SSD: True
-  SIZE_DIVISIBILITY: 896  # used in dataset mapper
+  SIZE_DIVISIBILITY: 1280  # used in dataset mapper
   FORMAT: "RGB"
 TEST:
   DETECTIONS_PER_IMAGE: 250
   EVAL_PERIOD: 5000
   AUG:
     ENABLED: False
-    MIN_SIZES: [448, 678, 896, 1120, 1344, 1568]
-    MAX_SIZE: 6272
+    MIN_SIZES: [640, 960, 1280, 1600, 1920, 2240]
+    MAX_SIZE: 8960
     FLIP: True
