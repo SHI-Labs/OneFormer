@@ -149,7 +149,10 @@ class SetCriterion(nn.Module):
         
         batch_size = image_x.shape[0]
         # get label globally
-        labels = torch.arange(batch_size, dtype=torch.long, device=image_x.device) + batch_size * dist.get_rank()
+        if is_dist_avail_and_initialized():
+            labels = torch.arange(batch_size, dtype=torch.long, device=image_x.device) + batch_size * dist.get_rank()
+        else:
+            labels = torch.arange(batch_size, dtype=torch.long, device=image_x.device)
 
         text_x = outputs["texts"]
 
@@ -157,8 +160,12 @@ class SetCriterion(nn.Module):
         image_x = F.normalize(image_x.flatten(1), dim=-1)
         text_x = F.normalize(text_x.flatten(1), dim=-1)
 
-        logits_per_img = image_x @ dist_collect(text_x).t()
-        logits_per_text = text_x @ dist_collect(image_x).t()
+        if is_dist_avail_and_initialized():
+            logits_per_img = image_x @ dist_collect(text_x).t()
+            logits_per_text = text_x @ dist_collect(image_x).t()
+        else:
+            logits_per_img = image_x @ text_x.t()
+            logits_per_text = text_x @ image_x.t()
 
         logit_scale = torch.clamp(self.logit_scale.exp(), max=100)
         loss_img = self.cross_entropy(logits_per_img * logit_scale, labels)
