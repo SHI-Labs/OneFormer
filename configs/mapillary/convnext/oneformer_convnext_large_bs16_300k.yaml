@@ -1,0 +1,18 @@
+_BASE_: ../oneformer_R50_bs16_300k.yaml
+MODEL:
+  BACKBONE:
+    NAME: "D2ConvNeXt"
+  CONVNEXT:
+    IN_CHANNELS: 3
+    DEPTHS: [3, 3, 27, 3]
+    DIMS: [192, 384, 768, 1536]
+    DROP_PATH_RATE: 0.4
+    LSIT: 1.0
+    OUT_INDICES: [0, 1, 2, 3]
+  WEIGHTS: "convnext_large_22k_1k_384.pkl"
+  PIXEL_MEAN: [123.675, 116.280, 103.530]
+  PIXEL_STD: [58.395, 57.120, 57.375]
+  ONE_FORMER:
+    NUM_OBJECT_QUERIES: 250
+TEST:
+  DETECTIONS_PER_IMAGE: 250
