@@ -22,7 +22,7 @@ from ..transformer_decoder.transformer import TransformerEncoder, TransformerEnc
 
 def build_pixel_decoder(cfg, input_shape):
     """
-    Build a pixel decoder from `cfg.MODEL.MASK_FORMER.PIXEL_DECODER_NAME`.
+    Build a pixel decoder from `cfg.MODEL.ONE_FORMER.PIXEL_DECODER_NAME`.
     """
     name = cfg.MODEL.SEM_SEG_HEAD.PIXEL_DECODER_NAME
     model = SEM_SEG_HEADS_REGISTRY.get(name)(cfg, input_shape)
@@ -274,13 +274,13 @@ class TransformerEncoderPixelDecoder(BasePixelDecoder):
     @classmethod
     def from_config(cls, cfg, input_shape: Dict[str, ShapeSpec]):
         ret = super().from_config(cfg, input_shape)
-        ret["transformer_dropout"] = cfg.MODEL.MASK_FORMER.DROPOUT
-        ret["transformer_nheads"] = cfg.MODEL.MASK_FORMER.NHEADS
-        ret["transformer_dim_feedforward"] = cfg.MODEL.MASK_FORMER.DIM_FEEDFORWARD
+        ret["transformer_dropout"] = cfg.MODEL.ONE_FORMER.DROPOUT
+        ret["transformer_nheads"] = cfg.MODEL.ONE_FORMER.NHEADS
+        ret["transformer_dim_feedforward"] = cfg.MODEL.ONE_FORMER.DIM_FEEDFORWARD
         ret[
             "transformer_enc_layers"
         ] = cfg.MODEL.SEM_SEG_HEAD.TRANSFORMER_ENC_LAYERS  # a separate config
-        ret["transformer_pre_norm"] = cfg.MODEL.MASK_FORMER.PRE_NORM
+        ret["transformer_pre_norm"] = cfg.MODEL.ONE_FORMER.PRE_NORM
         return ret
 
     def forward_features(self, features):

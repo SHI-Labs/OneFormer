@@ -396,7 +396,7 @@ def setup(args):
     default_setup(cfg, args)
     if not args.eval_only:
         setup_wandb(cfg, args)
-    # Setup logger for "mask_former" module
+    # Setup logger for "oneformer" module
     setup_logger(output=cfg.OUTPUT_DIR, distributed_rank=comm.get_rank(), name="oneformer")
     return cfg
 

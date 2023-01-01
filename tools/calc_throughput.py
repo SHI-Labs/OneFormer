@@ -1,12 +1,5 @@
-# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
-"""
-MaskFormer Training Script.
-
-This script is a simplified version of the training script in detectron2/tools.
-"""
 import copy
 import itertools
-import logging
 import os
 
 from typing import Any, Dict, List, Set
@@ -32,25 +25,13 @@ import sys
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 # fmt: on
 
-from cqformer import (
-    COCOInstanceNewBaselineDatasetMapper,
-    COCOPanopticNewBaselineDatasetMapper,
-    COCOSemanticNewBaselineDatasetMapper,
-    OfficialCOCOUnifiedNewBaselineDatasetMapper,
+from oneformer import (
     COCOUnifiedNewBaselineDatasetMapper,
-    MaskFormerInstanceDatasetMapper,
-    MaskFormerPanopticDatasetMapper,
-    MaskFormerSemanticDatasetMapper,
-    OfficialMaskFormerUnifiedDatasetMapper,
-    MaskFormerUnifiedDatasetMapper,
-    add_cqformer_config,
-    add_maskformer2_config,
+    OneFormerUnifiedDatasetMapper,
+    add_oneformer_config,
     add_common_config,
     add_swin_config,
     add_dinat_config,
-    add_dinats_config,
-    add_vit_adapter_config,
-    add_beit_adapter_config,
     add_convnext_config,
 )
 
@@ -64,41 +45,9 @@ class Trainer(TPDefaultTrainer):
 
     @classmethod
     def build_train_loader(cls, cfg):
-        # Semantic segmentation dataset mapper
-        if cfg.INPUT.DATASET_MAPPER_NAME == "mask_former_semantic":
-            mapper = MaskFormerSemanticDatasetMapper(cfg, True)
-            return build_detection_train_loader(cfg, mapper=mapper)
-        # Panoptic segmentation dataset mapper
-        elif cfg.INPUT.DATASET_MAPPER_NAME == "mask_former_panoptic":
-            mapper = MaskFormerPanopticDatasetMapper(cfg, True)
-            return build_detection_train_loader(cfg, mapper=mapper)
-        # Instance segmentation dataset mapper
-        elif cfg.INPUT.DATASET_MAPPER_NAME == "mask_former_instance":
-            mapper = MaskFormerInstanceDatasetMapper(cfg, True)
-            return build_detection_train_loader(cfg, mapper=mapper)
-        # Official Unified segmentation dataset mapper
-        elif cfg.INPUT.DATASET_MAPPER_NAME == "official_mask_former_unified":
-            mapper = OfficialMaskFormerUnifiedDatasetMapper(cfg, True)
-            return build_detection_train_loader(cfg, mapper=mapper)
         # Unified segmentation dataset mapper
-        elif cfg.INPUT.DATASET_MAPPER_NAME == "mask_former_unified":
-            mapper = MaskFormerUnifiedDatasetMapper(cfg, True)
-            return build_detection_train_loader(cfg, mapper=mapper)
-        # coco instance segmentation lsj new baseline
-        elif cfg.INPUT.DATASET_MAPPER_NAME == "coco_instance_lsj":
-            mapper = COCOInstanceNewBaselineDatasetMapper(cfg, True)
-            return build_detection_train_loader(cfg, mapper=mapper)
-        # coco panoptic segmentation lsj new baseline
-        elif cfg.INPUT.DATASET_MAPPER_NAME == "coco_panoptic_lsj":
-            mapper = COCOPanopticNewBaselineDatasetMapper(cfg, True)
-            return build_detection_train_loader(cfg, mapper=mapper)
-        # coco semantic segmentation lsj new baseline
-        elif cfg.INPUT.DATASET_MAPPER_NAME == "coco_semantic_lsj":
-            mapper = COCOSemanticNewBaselineDatasetMapper(cfg, True)
-            return build_detection_train_loader(cfg, mapper=mapper)
-        # official coco unified segmentation lsj new baseline
-        elif cfg.INPUT.DATASET_MAPPER_NAME == "official_coco_unified_lsj":
-            mapper = OfficialCOCOUnifiedNewBaselineDatasetMapper(cfg, True)
+        if cfg.INPUT.DATASET_MAPPER_NAME == "oneformer_unified":
+            mapper = OneFormerUnifiedDatasetMapper(cfg, True)
             return build_detection_train_loader(cfg, mapper=mapper)
         # coco unified segmentation lsj new baseline
         elif cfg.INPUT.DATASET_MAPPER_NAME == "coco_unified_lsj":
@@ -234,17 +183,13 @@ def setup(args):
     add_common_config(cfg)
     add_swin_config(cfg)
     add_dinat_config(cfg)
-    add_dinats_config(cfg)
-    add_vit_adapter_config(cfg)
-    add_beit_adapter_config(cfg)
-    add_cqformer_config(cfg)
-    add_maskformer2_config(cfg)
+    add_oneformer_config(cfg)
     add_convnext_config(cfg)
     cfg.merge_from_file(args.config_file)
     cfg.merge_from_list(args.opts)
     cfg.freeze()
     default_setup(cfg, args)
-    # Setup logger for "mask_former" module
+    # Setup logger for "oneformer" module
     setup_logger(output=cfg.OUTPUT_DIR, distributed_rank=comm.get_rank(), name="oneformer")
     return cfg
 

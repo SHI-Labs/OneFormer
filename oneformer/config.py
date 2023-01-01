@@ -58,7 +58,7 @@ def add_common_config(cfg):
     cfg.MODEL.TEXT_ENCODER.PROJ_NUM_LAYERS = 2
     cfg.MODEL.TEXT_ENCODER.N_CTX = 16
 
-    # mask_former inference config
+    # oneformer inference config
     cfg.MODEL.TEST = CN()
     cfg.MODEL.TEST.SEMANTIC_ON = True
     cfg.MODEL.TEST.INSTANCE_ON = False
@@ -102,7 +102,7 @@ def add_oneformer_config(cfg):
     Add config for ONE_FORMER.
     """
 
-    # mask_former model config
+    # oneformer model config
     cfg.MODEL.ONE_FORMER = CN()
 
     # loss
