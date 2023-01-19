@@ -37,24 +37,14 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 
 ## News
 
-### December 26, 2022
-
-- Checkpoints for Swin-L OneFormer and DiNat-L OneFormer trained on ADE20K with 1280&times;1280 resolution released!
-
-### November 23, 2022
-
-- Roboflow cover OneFormer on [YouTube](https://youtu.be/_Zr1pOi7Chw)! Thanks to [@SkalskiP](https://github.com/SkalskiP) for making the video!
-
-### November 18, 2022
-
-- Our demo is available on 🤗 Huggingface Space! Try it out on [![Huggingface space](https://img.shields.io/badge/🤗-Huggingface%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/OneFormer).
-
-### November 10, 2022
-
-- [**Project Page**](https://praeclarumjj3.github.io/oneformer/), [**ArXiv Preprint**](https://praeclarumjj3.github.io/oneformer/) and [**GitHub Repo**](https://praeclarumjj3.github.io/oneformer/) are public!
-- OneFormer sets new SOTA on Cityscapes val with single-scale inference on Panoptic Segmentation with **68.5** PQ score and Instance Segmentation with **46.7** AP score!
-- OneFormer sets new SOTA on ADE20K val on Panoptic Segmentation with **51.5** PQ score and on Instance Segmentation with **37.8** AP!
-- OneFormer sets new SOTA on COCO val on Panoptic Segmentation with **58.0** PQ score!
+- **[January 19, 2023]**: OneFormer is now available as a part of the 🤗 **HuggingFace [transformers](https://huggingface.co/docs/transformers/main/en/model_doc/oneformer) library** and **[model hub](https://huggingface.co/models?filter=oneformer)**! 🚀
+- **[December 26, 2022]**: Checkpoints for Swin-L OneFormer and DiNAT-L OneFormer trained on ADE20K with 1280&times;1280 resolution released!
+- **[November 23, 2022]**: Roboflow cover OneFormer on [YouTube](https://youtu.be/_Zr1pOi7Chw)! Thanks to [@SkalskiP](https://github.com/SkalskiP) for making the video!
+- **[November 18, 2022]**: Our demo is available on 🤗 [Huggingface Space](https://huggingface.co/spaces/shi-labs/OneFormer)!
+- **[November 10, 2022]**: [**Project Page**](https://praeclarumjj3.github.io/oneformer/), [**ArXiv Preprint**](https://praeclarumjj3.github.io/oneformer/) and [**GitHub Repo**](https://praeclarumjj3.github.io/oneformer/) are public!
+  - OneFormer sets new SOTA on Cityscapes val with single-scale inference on Panoptic Segmentation with **68.5** PQ score and Instance Segmentation with **46.7** AP score!
+  - OneFormer sets new SOTA on ADE20K val on Panoptic Segmentation with **51.5** PQ score and on Instance Segmentation with **37.8** AP!
+  - OneFormer sets new SOTA on COCO val on Panoptic Segmentation with **58.0** PQ score!
 
 ## Installation Instructions
 
