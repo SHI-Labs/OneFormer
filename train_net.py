@@ -116,6 +116,8 @@ class Trainer(DefaultTrainer):
             evaluator_list.append(SemSegEvaluator(dataset_name, distributed=True, output_dir=output_folder))
         if evaluator_type == "coco_panoptic_seg" and cfg.MODEL.TEST.DETECTION_ON:
             evaluator_list.append(DetectionCOCOEvaluator(dataset_name, output_dir=output_folder))
+        if evaluator_type == "mapillary_vistas_panoptic_seg" and cfg.MODEL.TEST.SEMANTIC_ON:
+            evaluator_list.append(SemSegEvaluator(dataset_name, distributed=True, output_dir=output_folder))
         # Cityscapes
         if evaluator_type == "cityscapes_instance":
             assert (
