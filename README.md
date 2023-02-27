@@ -38,6 +38,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 
 ## News
 
+- **[February 27, 2023]**: OneFormer is accepted to CVPR 2023!
 - **[January 26, 2023]**: OneFormer sets new SOTA performance on the the Mapillary Vistas val (both panoptic & semantic segmentation) and Cityscapes test (panoptic segmentation) sets. We’ve released the checkpoints too!
 - **[January 19, 2023]**: OneFormer is now available as a part of the 🤗 **HuggingFace [transformers](https://huggingface.co/docs/transformers/main/en/model_doc/oneformer) library** and **[model hub](https://huggingface.co/models?filter=oneformer)**! 🚀
 - **[December 26, 2022]**: Checkpoints for Swin-L OneFormer and DiNAT-L OneFormer trained on ADE20K with 1280&times;1280 resolution released!
@@ -128,11 +129,11 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 If you found OneFormer useful in your research, please consider starring ⭐ us on GitHub and citing 📚 us in your research!
 
 ```bibtex
-@article{jain2022oneformer,
+@inproceedings{jain2022oneformer,
       title={{OneFormer: One Transformer to Rule Universal Image Segmentation}},
       author={Jitesh Jain and Jiachen Li and MangTik Chiu and Ali Hassani and Nikita Orlov and Humphrey Shi},
-      journal={arXiv}, 
-      year={2022}
+      journal={CVPR}, 
+      year={2023}
     }
 ```
 
