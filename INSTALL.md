@@ -24,7 +24,7 @@ We use an evironment with the following specifications, packages and dependencie
 - Install packages and other dependencies.
 
   ```bash
-  git clone https://github.com/praeclarumjj3/OneFormer.git
+  git clone https://github.com/SHI-Labs/OneFormer.git
   cd OneFormer
 
   # Install Pytorch
