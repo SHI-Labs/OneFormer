@@ -16,7 +16,7 @@ MODEL:
 DATASETS:
   TRAIN: ("coco_2017_train_panoptic_with_sem_seg",)
   TEST_PANOPTIC: ("coco_2017_val_panoptic_with_sem_seg",)  # to evaluate instance and semantic performance as well
-  TEST_INSTANCE: ("coco_2017_val",)
+  TEST_INSTANCE: ("coco_2017_val_panoptic2instance",)
   TEST_SEMANTIC: ("coco_2017_val_panoptic_with_sem_seg",)
 SOLVER:
   IMS_PER_BATCH: 16
