@@ -34,8 +34,7 @@ We use an evironment with the following specifications, packages and dependencie
   pip3 install -U opencv-python
 
   # Install detectron2
-  python -m pip install detectron2 -f \
-    https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html
+  python tools/setup_detectron2.py
 
   # Install other dependencies
   pip3 install git+https://github.com/cocodataset/panopticapi.git
