@@ -54,6 +54,19 @@ It's common to initialize from backbone models pre-trained on ImageNet classific
     
 </details>
 
+<details>
+<summary>InternImage</summary>
+
+- [Official Repo](https://github.com/OpenGVLab/InternImage)
+- `convert-pretrained-model-to-d2.py`: Tool to convert InternImage pre-trained weights for D2.
+
+    ```bash
+    wget https://huggingface.co/OpenGVLab/InternImage/resolve/main/internimage_h_jointto22k_384.pth
+    python tools/convert-pretrained-model-to-d2.py internimage_h_jointto22k_384.pth internimage_h_jointto22k_384.pkl
+    ```
+
+</details>
+
 ## Analyze Model
 
 - Tool to analyze model parameters, flops and speed.
@@ -76,7 +89,7 @@ python tools/analyze_model.py --num-inputs 100 --tasks [flop speed] \
 python tools/calc_throughput.py --dist-url 'tcp://127.0.0.1:50162' \
 --num-gpus 8 \
 --config-file configs/ade20k/swin/oneformer_swin_large_IN21k_384_bs16_160k.yaml \
-MODEL.WEIGHTS pretrain/swin_large_patch4_window12_384_22kto1k.pkl \
+MODEL.WEIGHTS swin_large_patch4_window12_384_22kto1k.pkl \
 OUTPUT_DIR tp_out SOLVER.MAX_ITER 500
 
 rm -rf tp_out
