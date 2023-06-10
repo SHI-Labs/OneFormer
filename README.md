@@ -9,7 +9,7 @@
 
 <sup>&dagger;</sup> Equal Contribution
 
-[[`Project Page`](https://praeclarumjj3.github.io/oneformer/)] [[`arXiv`](https://arxiv.org/abs/2211.06220)] [[`pdf`](https://arxiv.org/pdf/2211.06220.pdf)] [[`BibTeX`](#4citation)]
+[[`Project Page`](https://praeclarumjj3.github.io/oneformer/)] [[`arXiv`](https://arxiv.org/abs/2211.06220)] [[`pdf`](https://openaccess.thecvf.com/content/CVPR2023/papers/Jain_OneFormer_One_Transformer_To_Rule_Universal_Image_Segmentation_CVPR_2023_paper.pdf)] [[`Slides`](https://drive.google.com/file/d/12XhiOXD08_LwzBwosoLVk7i8D45V8YfW/view?usp=sharing)] [[`Poster`](https://drive.google.com/file/d/1-U3hCYVNVht26NM-zbE87p1V4idc5bCt/view?usp=sharing)] [[`BibTeX`](#4citation)]
 
 This repo contains the code for our paper **OneFormer: One Transformer to Rule Universal Image Segmentation**.
 
@@ -38,6 +38,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 
 ## News
 
+- **[June 10, 2023]**: OneFormer achieves SOTA performance on ADE20K panoptic segmentation with **54.5 PQ** and on Cityscapes instance segmentation with **50.6 AP** scores. We release the corresponding models with InternImage-H backbone publicly!
 - **[February 27, 2023]**: OneFormer is accepted to CVPR 2023!
 - **[January 26, 2023]**: OneFormer sets new SOTA performance on the the Mapillary Vistas val (both panoptic & semantic segmentation) and Cityscapes test (panoptic segmentation) sets. We’ve released the checkpoints too!
 - **[January 19, 2023]**: OneFormer is now available as a part of the 🤗 **HuggingFace [transformers](https://huggingface.co/docs/transformers/main/en/model_doc/oneformer) library** and **[model hub](https://huggingface.co/models?filter=oneformer)**! 🚀
