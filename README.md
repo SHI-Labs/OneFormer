@@ -126,6 +126,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 | OneFormer | Swin-L<sup>&dagger;</sup> | 46.7 | 62.9 | 64.1 | 219M | [config](configs/mapillary_vistas/swin/oneformer_swin_large_bs16_300k.yaml) | [model](https://shi-labs.com/projects/oneformer/mapillary/250_16_swin_l_oneformer_mapillary_300k.pth) |
 | OneFormer | ConvNeXt-L<sup>&dagger;</sup> | 47.9 | 63.2 | 63.8 | 220M | [config](configs/mapillary_vistas/convnext/oneformer_convnext_large_bs16_300k.yaml) | [model](https://shi-labs.com/projects/oneformer/mapillary/250_16_convnext_l_oneformer_mapillary_300k.pth) |
 | OneFormer | DiNAT-L<sup>&dagger;</sup> | 47.8 | 64.0 | 64.9 | 223M | [config](configs/mapillary_vistas/dinat/oneformer_dinat_large_bs16_300k.yaml) | [model](https://shi-labs.com/projects/oneformer/mapillary/250_16_dinat_l_oneformer_mapillary_300k.pth) |
+| OneFormer | InternImage-H<sup>&dagger;</sup> | 51.7 | 65.5 | 66.5 | 1.10B | [config](configs/mapillary_vistas/intern_image/oneformer_intern_image_huge_bs16_300k.yaml) | [model](https://shi-labs.com/projects/oneformer/mapillary/250_16_intern_image_h_oneformer_mapillary_300k.pth) |
 
 
 ## Citation
