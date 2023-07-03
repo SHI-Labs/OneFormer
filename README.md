@@ -118,6 +118,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 |   :---:| :---:    | :---: | :---:              | :---:              |:---:| :---:| :---:  |  :---: |    :---:   |
 | OneFormer | Swin-L<sup>&dagger;</sup> | 57.9 | 64.4 | 48.0 | 49.0 | 67.4 | 219M | [config](configs/coco/swin/oneformer_swin_large_bs16_100ep.yaml) | [model](https://shi-labs.com/projects/oneformer/coco/150_16_swin_l_oneformer_coco_100ep.pth) |
 | OneFormer | DiNAT-L<sup>&dagger;</sup> | 58.0 | 64.3 | 48.4 | 49.2 | 68.1 | 223M | [config](configs/coco/dinat/oneformer_dinat_large_bs16_100ep.yaml) | [model](https://shi-labs.com/projects/oneformer/coco/150_16_dinat_l_oneformer_coco_100ep.pth) |
+| OneFormer | InternImage-H<sup>&dagger;</sup> | 59.1 | 66.4 | 48.1 | 50.5 | 68.1 | 1.10B | [config](configs/coco/intern_image/oneformer_intern_image_huge_bs16_100ep.yaml) | [model](https://shi-labs.com/projects/oneformer/cityscapes/250_16_intern_image_h_oneformer_coco_100ep.pth) |
 
 ### Mapillary Vistas
 
@@ -126,7 +127,8 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 | OneFormer | Swin-L<sup>&dagger;</sup> | 46.7 | 62.9 | 64.1 | 219M | [config](configs/mapillary_vistas/swin/oneformer_swin_large_bs16_300k.yaml) | [model](https://shi-labs.com/projects/oneformer/mapillary/250_16_swin_l_oneformer_mapillary_300k.pth) |
 | OneFormer | ConvNeXt-L<sup>&dagger;</sup> | 47.9 | 63.2 | 63.8 | 220M | [config](configs/mapillary_vistas/convnext/oneformer_convnext_large_bs16_300k.yaml) | [model](https://shi-labs.com/projects/oneformer/mapillary/250_16_convnext_l_oneformer_mapillary_300k.pth) |
 | OneFormer | DiNAT-L<sup>&dagger;</sup> | 47.8 | 64.0 | 64.9 | 223M | [config](configs/mapillary_vistas/dinat/oneformer_dinat_large_bs16_300k.yaml) | [model](https://shi-labs.com/projects/oneformer/mapillary/250_16_dinat_l_oneformer_mapillary_300k.pth) |
-| OneFormer | InternImage-H<sup>&dagger;</sup> | 51.7 | 65.5 | 66.5 | 1.10B | [config](configs/mapillary_vistas/intern_image/oneformer_intern_image_huge_bs16_300k.yaml) | [model](https://shi-labs.com/projects/oneformer/mapillary/250_16_intern_image_h_oneformer_mapillary_300k.pth) |
+| OneFormer (emb_dim=256) | InternImage-H<sup>&dagger;</sup> | 51.7 | 65.5 | 66.5 | 1.10B | [config](configs/mapillary_vistas/intern_image/oneformer_intern_image_huge_bs16_300k.yaml) | [model](https://shi-labs.com/projects/oneformer/mapillary/250_16_intern_image_h_oneformer_mapillary_300k.pth) |
+| OneFormer (emb_dim=1024) | InternImage-H<sup>&dagger;</sup> | 51.7 | 66.6 | 67.3 | 1.34B | [config](configs/mapillary_vistas/intern_image/oneformer_intern_image_huge_bs16_300k_1024.yaml) | [model](https://shi-labs.com/projects/oneformer/mapillary/250_16_intern_image_h_oneformer_mapillary_300k_1024.pth) |
 
 
 ## Citation
