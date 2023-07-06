@@ -38,7 +38,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 
 ## News
 
-- **[June 10, 2023]**: OneFormer achieves SOTA performance on ADE20K panoptic segmentation with **54.5 PQ** and on Cityscapes instance segmentation with **50.6 AP** scores. We release the corresponding models with InternImage-H backbone publicly!
+- **[July 6, 2023]**: OneFormer achieves SOTA performance on COCO panoptic segmentation with **60.0 PQ**, on ADE20K panoptic segmentation with **54.5 PQ** and on Cityscapes instance segmentation with **50.6 AP** scores. We release the corresponding models with InternImage-H backbone publicly!
 - **[February 27, 2023]**: OneFormer is accepted to CVPR 2023!
 - **[January 26, 2023]**: OneFormer sets new SOTA performance on the the Mapillary Vistas val (both panoptic & semantic segmentation) and Cityscapes test (panoptic segmentation) sets. We’ve released the checkpoints too!
 - **[January 19, 2023]**: OneFormer is now available as a part of the 🤗 **HuggingFace [transformers](https://huggingface.co/docs/transformers/main/en/model_doc/oneformer) library** and **[model hub](https://huggingface.co/models?filter=oneformer)**! 🚀
