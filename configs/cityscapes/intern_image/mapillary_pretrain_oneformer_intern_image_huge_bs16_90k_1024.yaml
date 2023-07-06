@@ -13,7 +13,7 @@ MODEL:
     MLP_RATIO: 4.0
     DW_KERNEL_SIZE: 5
     LEVEL2_POST_NORM_BLOCK_IDS: [5, 11, 17, 23, 29]
-  WEIGHTS: "internimage_h_jointto22k_384.pkl"
+  WEIGHTS: "mapillary_pretrain_250_16_intern_image_h_oneformer_mapillary_300k_1024.pth"
   PIXEL_MEAN: [123.675, 116.280, 103.530]
   PIXEL_STD: [58.395, 57.120, 57.375]
   ONE_FORMER:
