@@ -124,7 +124,7 @@ if __name__ == "__main__":
                 if len(args.input) == 1:
                     for k in visualized_output.keys():
                         os.makedirs(k, exist_ok=True)
-                        out_filename = os.path.join(k, args.output)
+                        out_filename = os.path.join(args.output, k)
                         visualized_output[k].save(out_filename)    
                 else:
                     for k in visualized_output.keys():
