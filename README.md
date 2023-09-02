@@ -9,7 +9,7 @@
 
 <sup>&dagger;</sup> Equal Contribution
 
-[[`Project Page`](https://praeclarumjj3.github.io/oneformer/)] [[`arXiv`](https://arxiv.org/abs/2211.06220)] [[`pdf`](https://arxiv.org/pdf/2211.06220.pdf)] [[`BibTeX`](#4citation)]
+[[`Project Page`](https://praeclarumjj3.github.io/oneformer/)] [[`arXiv`](https://arxiv.org/abs/2211.06220)] [[`pdf`](https://openaccess.thecvf.com/content/CVPR2023/papers/Jain_OneFormer_One_Transformer_To_Rule_Universal_Image_Segmentation_CVPR_2023_paper.pdf)] [[`Slides`](https://drive.google.com/file/d/12XhiOXD08_LwzBwosoLVk7i8D45V8YfW/view?usp=sharing)] [[`Poster`](https://drive.google.com/file/d/1-U3hCYVNVht26NM-zbE87p1V4idc5bCt/view?usp=sharing)] [[`BibTeX`](#4citation)]
 
 This repo contains the code for our paper **OneFormer: One Transformer to Rule Universal Image Segmentation**.
 
@@ -38,6 +38,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 
 ## News
 
+- **[July 6, 2023]**: OneFormer achieves SOTA performance on COCO panoptic segmentation with **60.0 PQ**, on ADE20K panoptic segmentation with **54.5 PQ** and on Cityscapes instance segmentation with **50.6 AP** scores. We release the corresponding models with InternImage-H backbone publicly!
 - **[February 27, 2023]**: OneFormer is accepted to CVPR 2023!
 - **[January 26, 2023]**: OneFormer sets new SOTA performance on the the Mapillary Vistas val (both panoptic & semantic segmentation) and Cityscapes test (panoptic segmentation) sets. We’ve released the checkpoints too!
 - **[January 19, 2023]**: OneFormer is now available as a part of the 🤗 **HuggingFace [transformers](https://huggingface.co/docs/transformers/main/en/model_doc/oneformer) library** and **[model hub](https://huggingface.co/models?filter=oneformer)**! 🚀
@@ -97,6 +98,8 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 | OneFormer | DiNAT-L<sup>&dagger;</sup> | 1280&times;1280 | 51.5 | 37.1 | 58.3 | 58.7 | 223M | [config](configs/ade20k/dinat/oneformer_dinat_large_bs16_160k_1280x1280.yaml) | [model](https://shi-labs.com/projects/oneformer/ade20k/1280x1280_250_16_dinat_l_oneformer_ade20k_160k.pth) |
 | OneFormer (COCO-Pretrained) | DiNAT-L<sup>&dagger;</sup> | 1280&times;1280 | 53.4 | 40.2 | 58.4 | 58.8 | 223M | [config](configs/ade20k/dinat/coco_pretrain_oneformer_dinat_large_bs16_160k_1280x1280_coco_pretrain.yaml) | [model](https://shi-labs.com/projects/oneformer/ade20k/coco_pretrain_1280x1280_150_16_dinat_l_oneformer_ade20k_160k.pth) &#124; [pretrained](https://shi-labs.com/projects/oneformer/coco/150_16_dinat_l_oneformer_coco_100ep.pth) |
 | OneFormer | ConvNeXt-XL<sup>&dagger;</sup> | 640&times;640 | 50.1 | 36.3 | 57.4 | 58.8 | 372M | [config](configs/ade20k/convnext/oneformer_convnext_xlarge_bs16_160k.yaml) | [model](https://shi-labs.com/projects/oneformer/ade20k/250_16_convnext_xl_oneformer_ade20k_160k.pth) |
+| OneFormer (emb_dim=256) | InternImage-H<sup>&dagger;</sup> | 896&times;896 | 54.5 | 40.2 | 60.4 | 60.8 | 1.10B | [config](configs/ade20k/intern_image/oneformer_intern_image_huge_bs16_160k_896x896.yaml) | [model](https://shi-labs.com/projects/oneformer/ade20k/896x896_250_16_intern_image_h_oneformer_ade20k_160k.pth) |
+| OneFormer (emb_dim=1024, COCO-Pretrained) | InternImage-H<sup>&dagger;</sup> | 896&times;896 | 55.5 | 44.2 | 60.7 | 60.7 | 1.35B | [config](configs/ade20k/coco_pretrain_intern_image/oneformer_intern_image_huge_bs16_160k_896x896.yaml) | [model](https://shi-labs.com/projects/oneformer/ade20k/coco_pretrain_896x896_250_16_intern_image_h_oneformer_ade20k_160k.pth) |
 
 ### Cityscapes
 
@@ -108,6 +111,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 | OneFormer | DiNAT-L<sup>&dagger;</sup> | 67.6 | 45.6 | 83.1 | 84.0 | 223M | [config](configs/cityscapes/dinat/oneformer_dinat_large_bs16_90k.yaml) | [model](https://shi-labs.com/projects/oneformer/cityscapes/250_16_dinat_l_oneformer_cityscapes_90k.pth) |
 | OneFormer | ConvNeXt-XL<sup>&dagger;</sup> | 68.4 | 46.7 | 83.6 | 84.6 | 372M | [config](configs/cityscapes/convnext/oneformer_convnext_xlarge_bs16_90k.yaml) | [model](https://shi-labs.com/projects/oneformer/cityscapes/250_16_convnext_xl_oneformer_cityscapes_90k.pth) |
 | OneFormer (Mapillary Vistas-Pretrained) | ConvNeXt-XL<sup>&dagger;</sup> | 69.7 | 48.9 | 84.5 | 85.8 | 372M | [config](configs/cityscapes/convnext/mapillary_pretrain_oneformer_convnext_xlarge_bs16_90k.yaml) | [model](https://shi-labs.com/projects/oneformer/cityscapes/mapillary_pretrain_250_16_convnext_xl_oneformer_cityscapes_90k.pth) &#124; [pretrained](https://shi-labs.com/projects/oneformer/mapillary/mapillary_pretrain_250_16_convnext_xl_oneformer_mapillary_300k.pth) |
+| OneFormer (emb_dim=256) | InternImage-H<sup>&dagger;</sup> | 70.6 | 50.6 | 85.1 | 85.7 | 1.10B | [config](configs/cityscapes/intern_image/oneformer_intern_image_huge_bs16_90k.yaml) | [model](https://shi-labs.com/projects/oneformer/cityscapes/250_16_intern_image_h_oneformer_cityscapes_90k.pth) |
 
 ### COCO
 
@@ -115,6 +119,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 |   :---:| :---:    | :---: | :---:              | :---:              |:---:| :---:| :---:  |  :---: |    :---:   |
 | OneFormer | Swin-L<sup>&dagger;</sup> | 57.9 | 64.4 | 48.0 | 49.0 | 67.4 | 219M | [config](configs/coco/swin/oneformer_swin_large_bs16_100ep.yaml) | [model](https://shi-labs.com/projects/oneformer/coco/150_16_swin_l_oneformer_coco_100ep.pth) |
 | OneFormer | DiNAT-L<sup>&dagger;</sup> | 58.0 | 64.3 | 48.4 | 49.2 | 68.1 | 223M | [config](configs/coco/dinat/oneformer_dinat_large_bs16_100ep.yaml) | [model](https://shi-labs.com/projects/oneformer/coco/150_16_dinat_l_oneformer_coco_100ep.pth) |
+| OneFormer (emb_dim=1024) | InternImage-H<sup>&dagger;</sup> | 60.0 | 67.1 | 49.2 | 52.0 | 68.8 | 1.35B | [config](configs/coco/intern_image/oneformer_intern_image_huge_bs16_100ep_1024.yaml) | [model](https://shi-labs.com/projects/oneformer/coco/250_16_intern_image_h_oneformer_coco_100ep_1024.pth) |
 
 ### Mapillary Vistas
 
@@ -123,6 +128,7 @@ This repo contains the code for our paper **OneFormer: One Transformer to Rule U
 | OneFormer | Swin-L<sup>&dagger;</sup> | 46.7 | 62.9 | 64.1 | 219M | [config](configs/mapillary_vistas/swin/oneformer_swin_large_bs16_300k.yaml) | [model](https://shi-labs.com/projects/oneformer/mapillary/250_16_swin_l_oneformer_mapillary_300k.pth) |
 | OneFormer | ConvNeXt-L<sup>&dagger;</sup> | 47.9 | 63.2 | 63.8 | 220M | [config](configs/mapillary_vistas/convnext/oneformer_convnext_large_bs16_300k.yaml) | [model](https://shi-labs.com/projects/oneformer/mapillary/250_16_convnext_l_oneformer_mapillary_300k.pth) |
 | OneFormer | DiNAT-L<sup>&dagger;</sup> | 47.8 | 64.0 | 64.9 | 223M | [config](configs/mapillary_vistas/dinat/oneformer_dinat_large_bs16_300k.yaml) | [model](https://shi-labs.com/projects/oneformer/mapillary/250_16_dinat_l_oneformer_mapillary_300k.pth) |
+| OneFormer (emb_dim=1024) | InternImage-H<sup>&dagger;</sup> | 52.9 | 67.3 | 67.5 | 1.35B | [config](configs/mapillary_vistas/intern_image/oneformer_intern_image_huge_bs16_300k_1024.yaml) | [model](https://shi-labs.com/projects/oneformer/mapillary/250_16_intern_image_h_oneformer_mapillary_300k_1024.pth) |
 
 
 ## Citation

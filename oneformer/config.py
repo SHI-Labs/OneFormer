@@ -3,7 +3,7 @@
 from detectron2.config import CfgNode as CN
 
 __all__ = ["add_common_config", "add_oneformer_config", "add_swin_config", 
-            "add_dinat_config", "add_convnext_config"]
+            "add_dinat_config", "add_convnext_config", "add_internimage_config"]
 
 def add_common_config(cfg):
     """
@@ -208,3 +208,28 @@ def add_convnext_config(cfg):
     cfg.MODEL.CONVNEXT.LSIT = 1.0
     cfg.MODEL.CONVNEXT.OUT_INDICES = [0, 1, 2, 3]
     cfg.MODEL.CONVNEXT.OUT_FEATURES = ["res2", "res3", "res4", "res5"]
+
+def add_internimage_config(cfg):
+    '''
+    Add config for InternImage Backbone.
+    '''
+
+    cfg.MODEL.INTERNIMAGE = CN()
+    cfg.MODEL.INTERNIMAGE.CORE_OP = 'DCNv3'
+    cfg.MODEL.INTERNIMAGE.CHANNELS = 320
+    cfg.MODEL.INTERNIMAGE.DEPTHS = [6, 6, 32, 6]
+    cfg.MODEL.INTERNIMAGE.GROUPS = [10, 20, 40, 80]
+    cfg.MODEL.INTERNIMAGE.MLP_RATIO = 4.
+    cfg.MODEL.INTERNIMAGE.DROP_RATE = 0.5
+    cfg.MODEL.INTERNIMAGE.norm_layer = 'LN'
+    cfg.MODEL.INTERNIMAGE.LAYER_SCALE = None
+    cfg.MODEL.INTERNIMAGE.OFFSET_SCALE = 1.0
+    cfg.MODEL.INTERNIMAGE.POST_NORM = False
+    cfg.MODEL.INTERNIMAGE.DW_KERNEL_SIZE = 5
+    cfg.MODEL.INTERNIMAGE.RES_POST_NORM = True
+    cfg.MODEL.INTERNIMAGE.LEVEL2_POST_NORM = True
+    cfg.MODEL.INTERNIMAGE.LEVEL2_POST_NORM_BLOCK_IDS = [5, 11, 17, 23, 29]
+    cfg.MODEL.INTERNIMAGE.CENTER_FEATURE_SCALE = True
+    cfg.MODEL.INTERNIMAGE.WITH_CP = True
+    cfg.MODEL.INTERNIMAGE.OUT_INDICES = [0, 1, 2, 3]
+    cfg.MODEL.INTERNIMAGE.OUT_FEATURES = ["res2", "res3", "res4", "res5"]
