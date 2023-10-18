@@ -14,27 +14,28 @@ We use an evironment with the following specifications, packages and dependencie
 
 ## Setup Instructions
 
-- Create a conda environment
+- Create a conda environment:
   
   ```bash
   conda create --name oneformer python=3.8 -y
   conda activate oneformer
   ```
 
-- Install packages and other dependencies.
+- Install packages and other dependencies:
 
   ```bash
   git clone https://github.com/SHI-Labs/OneFormer.git
   cd OneFormer
 
   # Install Pytorch
-  conda install pytorch==1.10.1 torchvision==0.11.2 cudatoolkit=11.3 -c pytorch -c conda-forge
+  conda install pytorch==1.10.1 torchvision==0.11.2 cudatoolkit=11.3 cudatoolkit-dev=11.3 -c pytorch -c conda-forge
 
   # Install opencv (required for running the demo)
   pip3 install -U opencv-python
 
   # Install detectron2
-  python tools/setup_detectron2.py
+  pip3 install 'git+https://github.com/facebookresearch/detectron2.git#egg=detectron2'
+  # OR: python tools/setup_detectron2.py
 
   # Install other dependencies
   pip3 install git+https://github.com/cocodataset/panopticapi.git
@@ -42,20 +43,26 @@ We use an evironment with the following specifications, packages and dependencie
   pip3 install -r requirements.txt
   ```
 
-- Setup wandb.
+- Install OneFormer in development mode:
+
+  From repo root (`OneFormer/`), run:
+  ```bash
+  pip3 install -e .
+  ```
+
+- Setup wandb:
 
   ```bash
-  # Setup wand
   pip3 install wandb
   wandb login
   ```
 
-- Setup CUDA Kernel for MSDeformAttn. `CUDA_HOME` must be defined and points to the directory of the installed CUDA toolkit.
+- Setup CUDA Kernel for MSDeformAttn (`CUDA_HOME` must be defined, pointing to the directory of the installed CUDA toolkit):
 
   ```bash
   # Setup MSDeformAttn
-  cd oneformer/modeling/pixel_decoder/ops
+  pushd oneformer/modeling/pixel_decoder/ops
   sh make.sh
-  cd ../../../..
+  popd
   ```
   
