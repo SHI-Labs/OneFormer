@@ -27,8 +27,8 @@ We use an evironment with the following specifications, packages and dependencie
   git clone https://github.com/SHI-Labs/OneFormer.git
   cd OneFormer
 
-  # Install Pytorch
-  conda install pytorch==1.10.1 torchvision==0.11.2 cudatoolkit=11.3 cudatoolkit-dev=11.3 -c pytorch -c conda-forge
+  # Install Pytorch; if nvcc supports cudatoolkit 11.3 then just install cudatoolkit=11.3, else cudatoolkit-dev=11.3
+  conda install pytorch==1.10.1 torchvision==0.11.2 cudatoolkit-dev=11.3 -c pytorch -c conda-forge
 
   # Install opencv (required for running the demo)
   pip3 install -U opencv-python
@@ -57,7 +57,7 @@ We use an evironment with the following specifications, packages and dependencie
   wandb login
   ```
 
-- Setup CUDA Kernel for MSDeformAttn (`CUDA_HOME` must be defined, pointing to the directory of the installed CUDA toolkit):
+- Setup CUDA Kernel for MSDeformAttn (`CUDA_HOME`:check with which nvcc - must be defined, pointing to the directory of the installed CUDA toolkit):
 
   ```bash
   # Setup MSDeformAttn
