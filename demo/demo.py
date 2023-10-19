@@ -8,10 +8,6 @@ import multiprocessing as mp
 import os
 import torch
 import random
-# fmt: off
-import sys
-sys.path.insert(1, os.path.join(sys.path[0], '..'))
-# fmt: on
 
 import time
 import cv2
@@ -107,7 +103,6 @@ if __name__ == "__main__":
     if args.input:
         for path in tqdm.tqdm(args.input, disable=not args.output):
             # use PIL, to be consistent with evaluation
-                
             img = read_image(path, format="BGR")
             start_time = time.time()
             predictions, visualized_output = demo.run_on_image(img, args.task)
@@ -125,14 +120,23 @@ if __name__ == "__main__":
                     for k in visualized_output.keys():
                         os.makedirs(k, exist_ok=True)
                         out_filename = os.path.join(k, args.output)
-                        visualized_output[k].save(out_filename)    
+                        visualized_output[k].save(out_filename)
                 else:
                     for k in visualized_output.keys():
-                        opath = os.path.join(args.output, k)    
+                        opath = os.path.join(args.output, k)
                         os.makedirs(opath, exist_ok=True)
                         out_filename = os.path.join(opath, os.path.basename(path))
-                        visualized_output[k].save(out_filename)    
+                        visualized_output[k].save(out_filename)
             else:
-                raise ValueError("Please specify an output path!")
+                logger.debug("No output path specified; displaying output image(s)")
+                try:
+                    for k in visualized_output.keys():
+                        window_title = f"{WINDOW_NAME}: {k}"
+                        cv2.imshow(window_title, visualized_output[k].get_image())
+                        cv2.waitKey(1)
+                    print("Press any key...")
+                    cv2.waitKey(-1)  # blocking
+                finally:
+                    cv2.destroyAllWindows()
     else:
         raise ValueError("No Input Given")

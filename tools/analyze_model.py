@@ -16,12 +16,6 @@ from detectron2.utils.analysis import (
 )
 from detectron2.utils.logger import setup_logger
 
-# fmt: off
-import os
-import sys
-sys.path.insert(1, os.path.join(sys.path[0], '..'))
-# fmt: on
-
 from oneformer.data.build import *
 from oneformer.data.dataset_mappers.dataset_mapper import DatasetMapper
 from oneformer import (

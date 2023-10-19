@@ -19,12 +19,6 @@ from detectron2.solver.build import maybe_add_gradient_clipping
 from detectron2.utils.logger import setup_logger
 from trainers.trainer import TPDefaultTrainer
 
-# fmt: off
-import os
-import sys
-sys.path.insert(1, os.path.join(sys.path[0], '..'))
-# fmt: on
-
 from oneformer import (
     COCOUnifiedNewBaselineDatasetMapper,
     OneFormerUnifiedDatasetMapper,
