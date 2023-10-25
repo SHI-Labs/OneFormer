@@ -1,0 +1,70 @@
+name: build-and-push
+on:
+  push:
+env:
+  DOCKER_DOMAIN: us.gcr.io
+  DOCKER_PROJECT: ridecell-1
+  DOCKER_IMAGE_REPO: OneFormer
+jobs:
+  build-and-push-image:
+    name: build-and-push-image
+    runs-on: self-hosted
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Context for Buildx
+        id: buildx-context
+        run: |
+          docker context create builders
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+        with:
+          version: latest
+          endpoint: builders
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_PULL_USER }}
+          password: ${{ secrets.DOCKER_HUB_PULL_PASSWORD }}
+
+      - name: Login to GCR
+        uses: docker/login-action@v2
+        with:
+          registry: us.gcr.io
+          username: _json_key
+          password: ${{ secrets.GCR_SERVICE_ACCOUNT_GITHIB_ACTION_KEY }}
+
+      - name: Set up github environment variables
+        uses: FranzDiebold/github-env-vars-action@v2
+
+      - name: Set DOCKER_IMAGE_TAG env
+        run: |
+          DOCKER_IMAGE_TAG=$(date +%s)-${CI_SHA_SHORT}-${CI_REF_NAME}
+          DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG:0:63}
+          DOCKER_IMAGE_TAG="$(echo -n ${DOCKER_IMAGE_TAG} | sed -e 's/[^a-zA-Z0-9]$/x/g' -e 's/[^a-zA-Z0-9_-]/-/g' | tr '[:upper:]' '[:lower:]')"
+          echo DOCKER_IMAGE_TAG=$DOCKER_IMAGE_TAG >> $GITHUB_ENV
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: us.gcr.io/ridecell-1/oneformer
+          tags: |
+            type=raw,value=${{ env.DOCKER_IMAGE_TAG }}
+
+      - name: Build and push
+        if: ${{ github.ref == 'refs/heads/main'|| contains(github.event.head_commit.message, 'BUILD_CONTAINER_IMAGE') }}
+        uses: docker/build-push-action@v3
+        with:
+          file: Dockerfile
+          secrets: |
+            "PYPI_URL=https://${{ secrets.PYPI_READ_ONLY_USER }}:${{ secrets.PYPI_READ_ONLY_PASSWORD }}@pypi.ridecell.us/simple"
+          tags: ${{ steps.meta.outputs.tags }}
+          push: true

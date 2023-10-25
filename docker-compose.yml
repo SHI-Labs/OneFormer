@@ -1,0 +1,33 @@
+version: '3.9'
+
+volumes:
+  postgres:
+  # This is used to copy compiled assets from node container to nginx
+  build_tmp:
+  redis:
+  rabbitmq:
+  celery_beat:
+
+networks:
+  default:
+
+services:
+  oneformer_app:
+    build:
+      context: .
+    environment:
+      TAG: ${TAG}
+    env_file: .env
+    image: ${PROJECT}:${TAG}
+    stdin_open: true
+    command: [bash]
+    volumes:
+      - .:/OneFormer
+      - ~/damage_detection/damage_segmentation_oneformer:/damage_segmentation_oneformer
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
