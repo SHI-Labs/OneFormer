@@ -26,6 +26,26 @@ python train_net.py --dist-url 'tcp://127.0.0.1:50163' \
     OUTPUT_DIR outputs/ade20k_swin_large WANDB.NAME ade20k_swin_large
 ```
 
+### Training on Multiple Nodes
+
+```bash
+### Node 1
+python train_net.py --dist-url <URL> \
+    --num-gpus 8 \
+    --num-machines 2 \
+    --machine-rank 0 \
+    --config-file configs/ade20k/intern_image/oneformer_intern_image_huge_bs16_160k_896x896_1024.yaml \
+    OUTPUT_DIR outputs/ade20k_intern_image_huge WANDB.NAME ade20k_intern_image_huge
+
+### Node 2
+python train_net.py --dist-url <URL> \
+    --num-gpus 8 \
+    --num-machines 2 \
+    --machine-rank 1 \
+    --config-file configs/ade20k/intern_image/oneformer_intern_image_huge_bs16_160k_896x896_1024.yaml \
+    OUTPUT_DIR outputs/ade20k_intern_image_huge WANDB.NAME ade20k_intern_image_huge
+```
+
 ## Evaluation
 
 - You need to pass the value of `task` token. `task` belongs to [panoptic, semantic, instance].

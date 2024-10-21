@@ -58,4 +58,12 @@ We use an evironment with the following specifications, packages and dependencie
   sh make.sh
   cd ../../../..
   ```
-  
+
+- Setup CUDA Kernel for DCNv3. Requires CUDA installed.
+
+  ```bash
+  # Setup DCNv3
+  cd oneformer/modeling/backbone/ops_dcnv3
+  sh make.sh
+  cd ../../../..
+  ```

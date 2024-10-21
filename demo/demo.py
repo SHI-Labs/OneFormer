@@ -29,6 +29,7 @@ from oneformer import (
     add_swin_config,
     add_dinat_config,
     add_convnext_config,
+    add_internimage_config
 )
 from predictor import VisualizationDemo
 
@@ -44,6 +45,7 @@ def setup_cfg(args):
     add_dinat_config(cfg)
     add_convnext_config(cfg)
     add_oneformer_config(cfg)
+    add_internimage_config(cfg)
     cfg.merge_from_file(args.config_file)
     cfg.merge_from_list(args.opts)
     cfg.freeze()

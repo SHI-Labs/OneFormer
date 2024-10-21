@@ -29,7 +29,6 @@ from oneformer import (
     add_common_config,
     add_swin_config,
     add_dinat_config,
-    add_beit_adapter_config,
     add_convnext_config,
 )
 
@@ -43,7 +42,6 @@ def setup(args):
         add_common_config(cfg)
         add_swin_config(cfg)
         add_dinat_config(cfg)
-        add_beit_adapter_config(cfg)
         add_oneformer_config(cfg)
         add_convnext_config(cfg)
         cfg.merge_from_file(args.config_file)

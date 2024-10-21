@@ -305,9 +305,11 @@ class MSDeformAttnPixelDecoder(nn.Module):
         ret["mask_dim"] = cfg.MODEL.SEM_SEG_HEAD.MASK_DIM
         ret["norm"] = cfg.MODEL.SEM_SEG_HEAD.NORM
         ret["transformer_dropout"] = cfg.MODEL.ONE_FORMER.DROPOUT
-        ret["transformer_nheads"] = cfg.MODEL.ONE_FORMER.NHEADS
-        # ret["transformer_dim_feedforward"] = cfg.MODEL.ONE_FORMER.DIM_FEEDFORWARD
-        ret["transformer_dim_feedforward"] = 1024  # use 1024 for deformable transformer encoder
+        ret["transformer_nheads"] = cfg.MODEL.ONE_FORMER.NHEADS 
+        if cfg.MODEL.SEM_SEG_HEAD.MASK_DIM != 256:
+            ret["transformer_dim_feedforward"] = cfg.MODEL.ONE_FORMER.DIM_FEEDFORWARD
+        else:
+            ret["transformer_dim_feedforward"] = 1024 
         ret[
             "transformer_enc_layers"
         ] = cfg.MODEL.SEM_SEG_HEAD.TRANSFORMER_ENC_LAYERS  # a separate config
