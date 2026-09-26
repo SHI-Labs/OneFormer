@@ -196,8 +196,10 @@ class SetCriterion(nn.Module):
         ce_weight[idx] = torch.tensor(1.).to(target_classes.device)
 
         loss_ce = F.cross_entropy(src_logits.transpose(1, 2), target_classes, self.empty_weight, reduce=False, reduction="none")
-        loss_ce = loss_ce.sum(1) / ce_weight.sum()
-        loss_ce = loss_ce.sum()
+        denominator = ce_weight.sum()
+        if is_dist_avail_and_initialized():
+            dist.all_reduce(denominator)
+        loss_ce = loss_ce.sum() * get_world_size() / denominator
         losses = {"loss_ce": loss_ce}
         return losses
     
